@@ -1,3 +1,13 @@
+<% if flash[:notice] %>
+<% = flash[:notice] %>
+
+ <% if @book.errors.any? %>
+   <%= @book.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+
 <h2>Title</h2>
 <p><%= @book.title %></p>
 
